@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": true,
+  "rules": {
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-console": false,
+    "member-access": false,
+    "member-ordering": false,
+    "no-trailing-whitespace": true,
+    "whitespace": false
+  },
+  "linterOptions": {
+    "exclude": ["**/assets/animations/*.json"]
+  }
+}
