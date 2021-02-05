@@ -1,0 +1,14 @@
+
+{# _myapp/templates/index.html_ #}
+
+{% extends "layout.html" %}
+{% block title %}NOAA Images{% endblock %}
+{% block head %}
+    {% assets "home_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+{% block body %}
+    {{ super() }}
+    <h2>This is the home page!</h2>
+{% endblock %}

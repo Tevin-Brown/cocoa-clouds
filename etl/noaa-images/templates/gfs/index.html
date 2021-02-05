@@ -1,0 +1,43 @@
+{# _myapp/templates/index.html_ #}
+
+{% extends "layout.html" %}
+{% block title %}NOAA Images- GFS Model{% endblock %}
+{% block head %}
+    {% assets "gfs_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+    <script>
+        $(document).ready(function() {
+            var ind = 1;
+            function indexToString(ind){
+                if (ind<10){
+                    return '00' + parseInt(ind)
+                }
+                if (ind<100){
+                    return '0' + parseInt(ind)
+                }
+                return parseInt(ind)
+            }
+            $('#back-button').click(function(event) {
+                if(ind>1){ind--}
+                $('#gfs-image').attr('src', 'http://mag.ncep.noaa.gov/data/gfs/12/namer/sim_radar_cref/gfs_namer_'+ indexToString(ind) +'_sim_radar_cref.gif')
+
+            });
+            $('#forward-button').click(function(event) {
+                if(ind<120){ind++}
+                $('#gfs-image').attr('src', 'http://mag.ncep.noaa.gov/data/gfs/12/namer/sim_radar_cref/gfs_namer_'+ indexToString(ind) +'_sim_radar_cref.gif')
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    {{ super() }}
+    <h2>This is the page to showcase the GFS model.</h2>
+    <div class='image-container'>
+            <img id='gfs-image' src="http://mag.ncep.noaa.gov/data/gfs/12/namer/sim_radar_cref/gfs_namer_001_sim_radar_cref.gif ">
+    </div>
+    <div class='button-container'>
+        <div id='back-button' class="button">Back</div>
+        <div id='forward-button' class="button">Forward</div>
+    </div>
+{% endblock %}
