@@ -1,1 +1,1 @@
-web: gunicorn etl/src:etl/src
+web: gunicorn --bind 0.0.0.0:$PORT etl/src:etl/src
