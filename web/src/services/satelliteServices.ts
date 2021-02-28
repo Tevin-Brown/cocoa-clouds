@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Satellites, {SatelliteDirectories} from '../pages/Satallites';
+import Satellites, {SatelliteDirectories} from '../pages/Satallites/Satellites';
 
 // const endpoint = process.env.REACT_APP_FLASK_ENDPOINT;
 const endpoint = 'http://localhost:5000/';

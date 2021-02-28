@@ -7,6 +7,7 @@ import {
   activeNavigationLink,
 } from './styles';
 import logo from '../../assets/images/Logo.png';
+import { routes } from '../../router/routes';
 
 const NavigationBar = () => {
   return (
@@ -16,21 +17,21 @@ const NavigationBar = () => {
       </div>
       <NavLink
         exact
-        to="/"
+        to={routes.home}
         className={navigationLink}
         activeClassName={activeNavigationLink}
       >
         Home
       </NavLink>
       <NavLink
-        to="/gfs"
+        to={routes.gfs}
         className={navigationLink}
         activeClassName={activeNavigationLink}
       >
         GFS
       </NavLink>
       <NavLink
-        to="/satellite-imagery"
+        to={routes.satellites}
         className={navigationLink}
         activeClassName={activeNavigationLink}
       >
