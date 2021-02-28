@@ -8,7 +8,6 @@ ensure you have python v3.7.2 and venv installed.
 2. Activate the virtual environment using `source venv/bin/activate`.
 3. Download the packages `pip install -r requirements.txt`
 
-## run the application
-export FLASK_APP=src
-export FLASK_ENV=development
-flask run
+## Run the application
+Run `bash start.sh`.
+The application is now hosted at http://127.0.0.1:5000/
