@@ -1,0 +1,1 @@
+web: gunicorn etl/src:etl/src
