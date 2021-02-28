@@ -1,0 +1,9 @@
+{# myapp/templates/macros.html #}
+
+{% macro nav_link(endpoint, text, location) %}
+{% if request.endpoint.endswith(endpoint) %}
+    <li class="active-{{location}} link-{{location}}"><a href="{{ url_for(endpoint) }}">{{text}}</a></li>
+{% else %}
+    <li class="link-{{location}}"><a href="{{ url_for(endpoint) }}">{{text}}</a></li>
+{% endif %}
+{% endmacro %}

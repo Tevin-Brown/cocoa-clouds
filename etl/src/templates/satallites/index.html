@@ -1,0 +1,45 @@
+{# _myapp/templates/index.html_ #}
+
+{% extends "layout.html" %}
+{% block title %}NOAA Images- GFS Model{% endblock %}
+{% block head %}
+    {% assets "satallites_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+    <script>
+        $(document).ready(function() {
+            var endpoints = []
+            var ind = 1
+            var request = new XMLHttpRequest();
+            request.onload = function() {
+                // We could do more interesting things with the response
+                // or, we could ignore it entirely
+                endpoints = JSON.parse(request.response).data
+                $('#satallite-image').attr('src', src="/satellites/color_WV/" + endpoints[ind])
+            };
+            request.open("GET", "/satellites/list/color_WV" , true);
+            request.send();
+            $('#previous-button').click(function(event) {
+                if(ind>1){ind--}
+                $('#satallite-image').attr('src', src="/satellites/color_WV/" + endpoints[ind])
+                
+            });
+            $('#next-button').click(function(event) {
+                if(ind<endpoints.length-1){ind++}
+                console.log(ind);
+                $('#satallite-image').attr('src', src="/satellites/color_WV/" + endpoints[ind])
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    {{ super() }}
+    <h2>This is the page to showcase Sattallite Imagery.</h2>
+    <div class='image-container'>
+        <img id='satallite-image' class='resize' src='static/img/current-satallite.jpg?ind=0'/>
+    </div>
+    <div class='button-container'>
+        <div id="previous-button" class="button">Previous</div>
+        <div id="next-button" class="button">Next</div>
+    </div>
+{% endblock %}
