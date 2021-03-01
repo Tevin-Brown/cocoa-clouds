@@ -27,7 +27,7 @@ MarkupSafe==1.1.1
 more-itertools==8.0.2
 packaging==19.2
 pbr==5.5.1
-Pillow==6.2.1
+Pillow==8.1.0
 pipenv==2020.8.13
 pluggy==0.13.1
 py==1.8.0
@@ -46,7 +46,6 @@ virtualenv==20.0.33
 virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
 wcwidth==0.1.7
-Weather-Flask==1.0
 webassets==0.12.1
 Werkzeug==0.16.0
 zipp==0.6.0

@@ -11,3 +11,7 @@ ensure you have python v3.7.2 and venv installed.
 ## Run the application
 Run `bash start.sh`.
 The application is now hosted at http://127.0.0.1:5000/
+
+## Docker
+1. Build an image `docker build -t cocoa-clouds .`
+2. Run the dockerfile `docker run --rm --name cocoa-clouds -p 5000:5000 cocoa-clouds`
