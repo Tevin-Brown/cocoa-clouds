@@ -1,5 +1,6 @@
 {
   "name": "weather-react",
+  "homepage": "http://tevin-brown.github.io/cocoa-clouds",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,10 +21,12 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cp -f config/config-local.json public/config.json && react-scripts start",
+    "build": "cp -f config/config-deploy.json public/config.json && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +45,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.3",
+    "gh-pages": "^3.1.0",
     "prettier": "^1.19.1",
     "prettier-package-json": "^2.1.3",
     "tslint": "^5.20.1",
