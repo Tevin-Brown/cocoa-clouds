@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cocoa-clouds/static/css/main.66fb87b7.chunk.css",
+    "main.js": "/cocoa-clouds/static/js/main.c4a6ef5f.chunk.js",
+    "main.js.map": "/cocoa-clouds/static/js/main.c4a6ef5f.chunk.js.map",
+    "runtime-main.js": "/cocoa-clouds/static/js/runtime-main.59aa5c12.js",
+    "runtime-main.js.map": "/cocoa-clouds/static/js/runtime-main.59aa5c12.js.map",
+    "static/js/2.e42f8361.chunk.js": "/cocoa-clouds/static/js/2.e42f8361.chunk.js",
+    "static/js/2.e42f8361.chunk.js.map": "/cocoa-clouds/static/js/2.e42f8361.chunk.js.map",
+    "index.html": "/cocoa-clouds/index.html",
+    "precache-manifest.911a551896c3d8d2f48877ebfd79685e.js": "/cocoa-clouds/precache-manifest.911a551896c3d8d2f48877ebfd79685e.js",
+    "service-worker.js": "/cocoa-clouds/service-worker.js",
+    "static/css/main.66fb87b7.chunk.css.map": "/cocoa-clouds/static/css/main.66fb87b7.chunk.css.map",
+    "static/js/2.e42f8361.chunk.js.LICENSE": "/cocoa-clouds/static/js/2.e42f8361.chunk.js.LICENSE",
+    "static/media/Logo.png": "/cocoa-clouds/static/media/Logo.714253c8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59aa5c12.js",
+    "static/js/2.e42f8361.chunk.js",
+    "static/css/main.66fb87b7.chunk.css",
+    "static/js/main.c4a6ef5f.chunk.js"
+  ]
+}
