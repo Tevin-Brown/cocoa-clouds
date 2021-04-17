@@ -24,9 +24,7 @@
     "start": "cp -f config/config-local.json public/config.json && react-scripts start",
     "build": "cp -f config/config-deploy.json public/config.json && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "git subtree push --prefix build origin gh-pages"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
