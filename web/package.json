@@ -24,7 +24,9 @@
     "start": "cp -f config/config-local.json public/config.json && react-scripts start",
     "build": "cp -f config/config-deploy.json public/config.json && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "cp -f -a build/. ../docs/"
   },
   "eslintConfig": {
     "extends": "react-app"
