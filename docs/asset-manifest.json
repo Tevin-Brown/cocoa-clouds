@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cocoa-clouds/static/css/main.66fb87b7.chunk.css",
+    "main.js": "/cocoa-clouds/static/js/main.7fe4053e.chunk.js",
+    "main.js.map": "/cocoa-clouds/static/js/main.7fe4053e.chunk.js.map",
+    "runtime-main.js": "/cocoa-clouds/static/js/runtime-main.a9826f6b.js",
+    "runtime-main.js.map": "/cocoa-clouds/static/js/runtime-main.a9826f6b.js.map",
+    "static/js/2.365a44fc.chunk.js": "/cocoa-clouds/static/js/2.365a44fc.chunk.js",
+    "static/js/2.365a44fc.chunk.js.map": "/cocoa-clouds/static/js/2.365a44fc.chunk.js.map",
+    "index.html": "/cocoa-clouds/index.html",
+    "precache-manifest.21a95de51208f3a4e1cc354c57b12e3d.js": "/cocoa-clouds/precache-manifest.21a95de51208f3a4e1cc354c57b12e3d.js",
+    "service-worker.js": "/cocoa-clouds/service-worker.js",
+    "static/css/main.66fb87b7.chunk.css.map": "/cocoa-clouds/static/css/main.66fb87b7.chunk.css.map",
+    "static/js/2.365a44fc.chunk.js.LICENSE": "/cocoa-clouds/static/js/2.365a44fc.chunk.js.LICENSE",
+    "static/media/Logo.png": "/cocoa-clouds/static/media/Logo.714253c8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9826f6b.js",
+    "static/js/2.365a44fc.chunk.js",
+    "static/css/main.66fb87b7.chunk.css",
+    "static/js/main.7fe4053e.chunk.js"
+  ]
+}
