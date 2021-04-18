@@ -21,7 +21,7 @@ export const AppRouter: React.FC = () => {
   
   useEffect(()=>{
     if (!config) {
-      Axios.get<AppConfig>(window.location.origin + '/config.json')
+      Axios.get<AppConfig>(`${process.env.PUBLIC_URL}/config.json`)
         .then((res) => {
             appDispatch({type: 'setConfig', data:res.data});
         })
