@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {css} from 'emotion';
-import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import {Switch, Route, HashRouter as Router} from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 import Home from '../pages/Home';
 import Footer from '../components/Footer';
 import Satellites from '../pages/Satallites/Satellites';
-import { AppProvider, useAppDispatch, useAppState } from '../appContext';
+import { useAppDispatch, useAppState } from '../appContext';
 import { AppConfig } from '../appContext.definitions';
 import Axios from 'axios';
 import { SatelliteProvider } from '../pages/Satallites/satelliteContext';
 import { routes } from './routes';
+import GFS from '../pages/gfs';
 
 const appContainer = css`
   background: #eeeeee;
@@ -37,9 +38,7 @@ export const AppRouter: React.FC = () => {
           <Route path={routes.about}>
             <div>About</div>
           </Route>
-          <Route path={routes.gfs}>
-            <div>GFS Model</div>
-          </Route>
+            <Route exact path={routes.gfs} component={GFS} />
           <SatelliteProvider>
             <Route exact path={routes.satellites} component={Satellites} />
           </SatelliteProvider>
