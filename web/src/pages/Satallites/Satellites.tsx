@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {css} from 'emotion';
 import { useService } from '../../services/serviceHook';
-import {RouteComponentProps, withRouter } from 'react-router-dom';
-import { routes } from '../../router/routes';
 
 const satelliteContainer = css`
   display: flex;
@@ -26,52 +24,24 @@ const imageContainer = css`
   align-items: center;
 `;
 
-const satelliteLinkContainer = css`
-  display: flex;
-`;
-
-const satelliteLink = css`
-  margin:8px;
-  &:hover {
-    cursor: pointer;
-    color: gray;
-  }
-`;
-
-const satelliteLinkActive = css`
-  margin:8px;
-  color:blue;
-  &:hover {
-    cursor: pointer;
-    color: gray;
-  }
+const headerText = css`
+  font-size: 20px;
+  margin: 5px 0px;
 `;
 
 const button = css`
   margin: 8px;
 `
-
-export const routeMap:SatelliteDirectories = {
-  color_IR: 'Infared',
-  color_WV: 'Water Vapor',
-};
-
 export interface SatelliteDirectories {
   color_IR: string;
   color_WV: string;
 }
 
-const Satellites = ({location, history}:RouteComponentProps) => {
+const Satellites = ({directory}: {directory: keyof SatelliteDirectories}) => {
   const {satelliteService} = useService()
   const [images, setImages] = useState<string[]>()
   const [imageIndex, setImageIndex] = useState<number>(0)
   const img = useRef<HTMLImageElement>(null)
-  const directory = location.hash.slice(1)
-
-  const click = (key: keyof SatelliteDirectories) => {
-    var route = `${routes.satellites}#${key}`
-    history.push(route)
-  }
 
   const imageClick = (cmd: 'previous' | 'next') => {
     switch (cmd) {
@@ -86,13 +56,11 @@ const Satellites = ({location, history}:RouteComponentProps) => {
   }
   
   useEffect(() => {
-    if (Object.keys(routeMap).includes(directory)){
-      satelliteService.getDirectoryFiles(directory as keyof SatelliteDirectories).then(res => {
+      satelliteService.getDirectoryFiles(directory).then(res => {
         setImages(res.data.data);
         setImageIndex(0);
       })
-    }
-  }, [location]);
+  }, []);
 
   useEffect(()=>{
     if(images){
@@ -107,17 +75,11 @@ const Satellites = ({location, history}:RouteComponentProps) => {
         }
       })
     }
-  },[imageIndex,images])
+  },[imageIndex, images])
   
   return (
     <div className={satelliteContainer}>
-      <div className={satelliteLinkContainer}>
-        {Object.entries(routeMap).map(([key,value]) =>
-          <div className={directory===key ? satelliteLinkActive : satelliteLink} onClick={()=>click(key as keyof SatelliteDirectories)}>
-            {value}
-          </div>
-        )}
-      </div>
+      <p className={headerText}>Look at these awesome satallite images!</p>
       <div className={imageContainer}>
           <img className={image} ref={img}/>
           <div>
@@ -129,4 +91,4 @@ const Satellites = ({location, history}:RouteComponentProps) => {
   );
 };
 
-export default withRouter(Satellites);
+export default Satellites;

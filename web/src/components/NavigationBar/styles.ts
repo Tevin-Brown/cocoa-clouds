@@ -20,8 +20,6 @@ export const navigationLink = css`
   color: black;
   outline: none;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 500;
   padding: 0px 10px;
 `;
 export const activeNavigationLink = css`

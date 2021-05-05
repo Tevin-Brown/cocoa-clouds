@@ -1,43 +1,73 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {
-  navigationBarContainer,
   navigationLink,
-  logoContainer,
   activeNavigationLink,
 } from './styles';
-import logo from '../../assets/images/Logo.png';
 import { routes } from '../../router/routes';
 
 const NavigationBar = () => {
   return (
-    <div className={navigationBarContainer}>
-      <div className={logoContainer}>
-        <img src={logo} width="60px" height="50px" />
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+      <div className="navbar-item">
+          <Link
+            to={routes.home}
+            className={navigationLink}
+          >
+            Cocoa Clouds
+          </Link>
+        </div>
+
+        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-      <NavLink
-        exact
-        to={routes.home}
-        className={navigationLink}
-        activeClassName={activeNavigationLink}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to={routes.gfs}
-        className={navigationLink}
-        activeClassName={activeNavigationLink}
-      >
-        GFS
-      </NavLink>
-      <NavLink
-        to={routes.satellites}
-        className={navigationLink}
-        activeClassName={activeNavigationLink}
-      >
-        Satellite Imagery
-      </NavLink>
+    <div className="navbar-menu">
+      <div className="navbar-start">
+        <div className="navbar-item">
+          <NavLink
+            to={routes.gfs}
+            className={navigationLink}
+            activeClassName={activeNavigationLink}
+          >
+            GFS
+          </NavLink>
+        </div>
+
+        <div className="navbar-item has-dropdown is-hoverable">
+          <div className="navbar-link">
+            <div
+              className={navigationLink}
+            >
+              Satellite Imagery
+            </div>
+          </div>
+
+          <div className="navbar-dropdown">
+            <a className="navbar-item">
+              <Link
+                to={routes.satellitesIR}
+                className={navigationLink}
+              >
+                Infared
+              </Link>
+            </a>
+            <a className="navbar-item">
+              <Link
+                to={routes.satellitesWV}
+                className={navigationLink}
+              >
+                Water Vapor
+              </Link>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </nav>
   );
 };
 

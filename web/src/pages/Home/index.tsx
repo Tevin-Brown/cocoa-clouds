@@ -14,7 +14,7 @@ const centeredContainer = css`
 const Home: React.FC = () => {
   return (
     <div className={centeredContainer}>
-      <Card>Home</Card>
+      Home page coming soon
     </div>
   );
 };

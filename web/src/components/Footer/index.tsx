@@ -3,9 +3,9 @@ import {footerContainer} from './styles';
 
 const Footer = () => {
   return (
-    <div className={footerContainer}>
+    <footer className="footer">
       <span>Copyright Tevin Brown</span>
-    </div>
+    </footer>
   );
 };
 

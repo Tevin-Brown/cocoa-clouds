@@ -40,7 +40,8 @@ export const AppRouter: React.FC = () => {
           </Route>
             <Route exact path={routes.gfs} component={GFS} />
           <SatelliteProvider>
-            <Route exact path={routes.satellites} component={Satellites} />
+            <Route exact path={routes.satellitesIR} render={()=><Satellites directory={'color_IR'}/>} />
+            <Route exact path={routes.satellitesWV} render={()=><Satellites directory={'color_WV'}/>} />
           </SatelliteProvider>
           <Route>
             <div>This page was not found</div>

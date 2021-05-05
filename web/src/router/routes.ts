@@ -1,7 +1,8 @@
 export const routes = {
     home: "/",
     satellites:"/satellites",
-    waterVapor:"/satellites/water-vapor",
+    satellitesIR:"/satellites/infared",
+    satellitesWV:"/satellites/water-vapor",
     about:"/about",
     gfs:"/gfs"
 }
